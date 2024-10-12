@@ -82,6 +82,11 @@ class CF7ConditionalSettings
 			}
 
 			$conditional_forms = get_field('conditional_forms', 'option');
+
+			if (!$conditional_forms) {
+				return $output;
+			}
+
 			$filtered_form = array_filter($conditional_forms, function ($form) use ($attr) {
 				return $form['form'] === $attr['id'];
 			})[0] ?? null;
