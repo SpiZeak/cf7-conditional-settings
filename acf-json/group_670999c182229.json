@@ -60,7 +60,14 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [],
+                    "choices": {
+                        "7fbdec0": "Intresseanmälan utbildning",
+                        "1f4562e": "Medlemskap i föreningen",
+                        "476ed86": "Kontaktformulär",
+                        "ac63739": "Test",
+                        "3fe746a": "Bli volontär",
+                        "75e560e": "Återkoppling"
+                    },
                     "default_value": false,
                     "return_format": "value",
                     "multiple": 0,
@@ -130,7 +137,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "",
+    "description": "Från plugin: cf7-conditional-settings",
     "show_in_rest": 0,
-    "modified": 1728683099
+    "modified": 1728687674
 }
