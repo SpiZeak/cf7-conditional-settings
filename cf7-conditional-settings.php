@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: CF7 Conditional Settings
- * Description: Adds conditional settings to CF7 under CF7 menu
+ * Description: Lägger till villkorade inställningar för Contact Form 7 formulär.
  * Version: 1.0
  * Author: Max Trewhitt
  * Author URI: https://github.com/SpiZeak
