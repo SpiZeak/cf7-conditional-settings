@@ -93,7 +93,7 @@
                         "id": ""
                     },
                     "display_format": "d\/m\/Y g:i a",
-                    "return_format": "d\/m\/Y g:i a",
+                    "return_format": "Y-m-d H:i:s",
                     "first_day": 1,
                     "allow_in_bindings": 0,
                     "parent_repeater": "field_670999c23cd3e"
@@ -113,7 +113,7 @@
                         "id": ""
                     },
                     "display_format": "d\/m\/Y g:i a",
-                    "return_format": "d\/m\/Y g:i a",
+                    "return_format": "Y-m-d H:i:s",
                     "first_day": 1,
                     "allow_in_bindings": 0,
                     "parent_repeater": "field_670999c23cd3e"
@@ -139,5 +139,5 @@
     "active": true,
     "description": "Från plugin: cf7-conditional-settings",
     "show_in_rest": 0,
-    "modified": 1728687674
+    "modified": 1728692865
 }

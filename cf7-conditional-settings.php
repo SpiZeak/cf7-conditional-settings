@@ -81,15 +81,29 @@ class CF7ConditionalSettings
 				return $output;
 			}
 
-			$pattern = '/\[contact-form-7 id="(\d+)"\]/';
-			$matches = [];
-			preg_match($pattern, $output, $matches);
 			$conditional_forms = get_field('conditional_forms', 'option');
+			$filtered_form = array_filter($conditional_forms, function ($form) use ($attr) {
+				return $form['form'] === $attr['id'];
+			})[0] ?? null;
 
-			if (count($matches) > 1) {
-				$form_id = $matches[1];
-				$hash = WPCF7_ContactForm::get_instance($form_id)->hash();
-				$output = str_replace($form_id, $hash, $output);
+			if (!$filtered_form) {
+				return $output;
+			}
+
+			$now = new DateTime(current_time('mysql'));
+			$start_date = new DateTime($filtered_form['start_datetime']);
+			$end_date = new DateTime($filtered_form['end_datetime']);
+
+			if ($filtered_form['is_shown_during_period'] === false) {
+				$eject = !($now < $start_date || $now > $end_date);
+			} else {
+				$eject = $now < $start_date || $now > $end_date;
+			}
+
+			if ($eject) {
+				return '';
+			} else {
+				return $output;
 			}
 		}, 10, 3);
 	}
